@@ -43,17 +43,23 @@ function Person(name, age) {
   this.name = name;
   this.age = age 
   this.stomach = []
+  // this. is the function showing you specific within it's function.   **********
 }
+// You call the name of the function "Person" than use Prototype to add inhiratance and name what you would like to connect to "person" (family tree style)  **********
 Person.prototype.eat = function (food) {
   if (this.stomach.length < 10) {
     this.stomach.push(food)
+    // if statement to show the proccess you want it to take  **********
+    // when the proccess returns true, it ".pushes" "food" to the "this.stomach" empty array (adds to the array).   **********
   }
 };
 Person.prototype.poop = function() {
   this.stomach = [];
 };
+// Preparing for an exit... lol   **********
 Person.prototype.toString = function() {
   return `${this.name}, ${this.age}`;
+  // This same type of proccess as above but given out the name and age within the backticks   **********
 };
 /*
   TASK 2
@@ -75,8 +81,11 @@ function Car(model, milesPerGallon) {
   this.model = model; 
   this.milesPerGallon = milesPerGallon;
 }
+// .this shows up what the car has aka can easily be presented whenever by calling ".this"   **********
 Car.prototype.fill = function(gallons) {
   return (this.tank += gallons);
+  // Adding "fill" as an inheratance to the "car" family tree style     **********
+  // Doing simple math to add action when "tank" is introduced to "gallons"   **********
 };
 
 /*
@@ -89,12 +98,16 @@ Car.prototype.fill = function(gallons) {
 function Baby(name, age, favoriteToy) {
   Person.call(this, name, age);
   this.favoriteToy = favoriteToy;
+  // I used the ".call" the call the "person" and use it's ".this" values   **********
+  // Created babies own ".this" (defintiely not putting baby in the corner)  **********
 }
 Baby.prototype = Object.create(Person.prototype);
+// Created an "object.create" using exciting material       ***********
 Baby.prototype.play = function() {
   return `Playing with ${this.favoriteToy}`
+  // using backticks to display the above         **********
 }
-
+// 
 /* 
   TASK 4
 
